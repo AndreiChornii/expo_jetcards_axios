@@ -16,9 +16,11 @@ const SearchScreen = () => {
                 'Rhenj567'
             )
             setResults('Logged in successfull');
+            setErrorMessage('');
             log.debug(response.data);
         } catch (err) {
-            setResults('Wrong login/password');
+            setErrorMessage('Wrong login/password');
+            setResults('');
             console.log(err);
         }
     }
@@ -30,6 +32,7 @@ const SearchScreen = () => {
             onTermSubmit={searchApi}
         />
         {results ? <Text>{results}</Text> : null}
+        {errorMessage ? <Text>{errorMessage}</Text> : null}
         {/* <Text>{term}</Text> */}
         <Text>We have found {results.length} resultss</Text>
     </View>
