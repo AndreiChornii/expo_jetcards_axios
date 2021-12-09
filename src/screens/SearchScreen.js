@@ -32,6 +32,7 @@ const SearchScreen = () => {
                         term={term}
                         onTermChange={setTerm}
                         placeholder="Login"
+                        secureTextEntry = {false}
                     />
 
                 </View>
@@ -45,6 +46,7 @@ const SearchScreen = () => {
                         term={pass}
                         onTermChange={setPass}
                         placeholder="Password"
+                        secureTextEntry = {true}
                     />
                 </View>
                 <View style={styles.rez}>
