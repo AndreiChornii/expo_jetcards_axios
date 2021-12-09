@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "../components/SearchBar";
+import ButtonBar from "../components/ButtonBar";
 import yelp from "../api/yelp";
 import { logger } from "react-native-logs";
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
+    const [pass, setPass] = useState('');
     const [results, setResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -29,7 +31,13 @@ const SearchScreen = () => {
         <SearchBar
             term={term}
             onTermChange={setTerm}
-            onTermSubmit={searchApi}
+        />
+        <SearchBar
+            term={pass}
+            onTermChange={setPass}
+        />
+        <ButtonBar
+            onLogin={searchApi}
         />
         {results ? <Text>{results}</Text> : null}
         {errorMessage ? <Text>{errorMessage}</Text> : null}
