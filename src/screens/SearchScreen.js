@@ -14,8 +14,8 @@ const SearchScreen = () => {
     let log = logger.createLogger();
     const searchApi = async () => {
         try {
-            const response = await yelp.post('/GetAPIKey/chornii', 
-                'Rhenj567'
+            const response = await yelp.post(`/GetAPIKey/${term}`, 
+                `${pass}`
             )
             setResults('Logged in successfull');
             setErrorMessage('');
@@ -39,6 +39,8 @@ const SearchScreen = () => {
         <ButtonBar
             onLogin={searchApi}
         />
+        {term ? <Text>{term}</Text> : null}
+        {pass ? <Text>{pass}</Text> : null}
         {results ? <Text>{results}</Text> : null}
         {errorMessage ? <Text>{errorMessage}</Text> : null}
         {/* <Text>{term}</Text> */}
