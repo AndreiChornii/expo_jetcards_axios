@@ -14,7 +14,8 @@ const SearchScreen = () => {
 
     const titleText = "JET CARDS Service - Sign in";
 
-    return <View style={styles.container}>
+    return (
+    <View style={styles.container}>
         <View style={styles.middle}>
             <View style={styles.header}>
                 <Text style={styles.titleText}>
@@ -62,44 +63,46 @@ const SearchScreen = () => {
 
             </View>
         </View>
-        <View>
-
-        </View>
     </View>
+    )
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 0.9,
+        flex: 1.0,
         justifyContent: "center",
         backgroundColor: "#fff",
         padding: 20,
         margin: 10,
     },
     middle: {
-        flex: 0.90,
+        flex: 0.80,
         backgroundColor: "#fff",
         borderWidth: 1,
         borderColor: 'lightgrey',
         borderRadius: 10,
         alignItems: "center",
-
+        justifyContent: 'space-between'
     },
     header: {
-        flex: 0.25,
+        // flex: 0.17,
         backgroundColor: "#de2768",
         borderRadius: 5,
-        position: "relative",
+        // position: "relative",
         width: "75%",
+        height: 70,
         justifyContent: 'center',
-        marginTop: -40
+        alignItems: "center",
+        marginTop: -35
     },
     content: {
-        flex: 0.75,
+        flex: 0.90,
         // backgroundColor: "green",
         justifyContent: "space-around",
-        width: "90%"
-        // alignItems: "center"
+        width: "90%",
+        alignItems: "center",
+        // borderWidth:1,
+        // borderColor: "black"
     },
     titleText: {
         fontSize: 15,
